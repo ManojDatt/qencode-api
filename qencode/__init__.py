@@ -40,9 +40,9 @@ def x265_video_codec():
     return Libx265_VideoCodecParameters()
 
 
-from exeptions import QencodeClientException, QencodeTaskException
+from .exeptions import QencodeClientException, QencodeTaskException
 
-from tools import generate_aws_signed_url, fps_drm, cenc_drm
+from .tools import generate_aws_signed_url, fps_drm, cenc_drm
 
 __version__ = "1.0.4"
 __status__ = "Production/Stable"

@@ -1,6 +1,6 @@
-from httptools import Http
-from task import Task
-from metadata import Metadata
+from qencode.httptools import Http
+from qencode.task import Task
+from qencode.metadata import Metadata
 
 
 class QencodeApiClient(object):

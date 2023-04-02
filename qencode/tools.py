@@ -1,5 +1,5 @@
 #
-from .const import *
+from qencode.const import *
 import datetime
 import hashlib
 import hmac

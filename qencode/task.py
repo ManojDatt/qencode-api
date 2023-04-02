@@ -1,8 +1,8 @@
-from custom_params import Query, CustomTranscodingParams
-from const import *
+from qencode.custom_params import Query, CustomTranscodingParams
+from qencode.const import *
 import time
 import json
-from utils import is_json, rm_key_if_null
+from qencode.utils import is_json, rm_key_if_null
 
 
 class Task(object):

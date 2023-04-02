@@ -1,6 +1,6 @@
 import sys
 from tusclient import client
-from utils import get_tus_from_url
+from qencode.utils import get_tus_from_url
 
 
 class UploadStatus(object):

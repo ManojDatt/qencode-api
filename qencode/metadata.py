@@ -1,6 +1,6 @@
 from qencode.task import *
 from qencode import QencodeTaskException
-import urllib2
+import urllib.request
 
 
 class Metadata(Task):
@@ -36,6 +36,6 @@ class Metadata(Task):
         if url is None:
             raise QencodeTaskException('No metadata URL found in status response')
 
-        data = urllib2.urlopen(url).read()
+        data = urllib.request.urlopen(url).read()
 
         return data

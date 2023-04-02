@@ -1,7 +1,8 @@
 import json
 import urllib
-import urllib2
-from urlparse import urljoin
+import urllib.request
+import urllib.error
+from urllib.parse import urljoin, urlencode
 import ssl
 
 
@@ -15,19 +16,19 @@ class Http(object):
         if not url:
             response = dict(error=True, message='AttributeError: Bad URL')
             return json.dumps(response)
-        data = urllib.urlencode(post_data)
-        request = urllib2.Request(url, data)
+        data = urlencode(post_data)
+        request = urllib.request.Request(url, data.encode())
         context = ssl._create_unverified_context()
         try:
-            res = urllib2.urlopen(request, context=context)
-        except urllib2.HTTPError as e:
+            res = urllib.request.urlopen(request, context=context)
+        except urllib.error.HTTPError as e:
             headers = e.headers if self._debug else ''
             response = dict(
                 error=True,
                 message='HTTPError: {0} {1} {2}'.format(e.code, e.reason, headers),
             )
             response = json.dumps(response)
-        except urllib2.URLError as e:
+        except urllib.error.URLError as e:
             response = dict(error=True, message='URLError: {0}'.format(e.reason))
             response = json.dumps(response)
         else:

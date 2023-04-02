@@ -1,4 +1,4 @@
 tuspy
 requests
-
+boto3
 

@@ -1,4 +1,4 @@
-from task import *
+from qencode.task import *
 from qencode import QencodeTaskException
 import urllib2
 

@@ -26,7 +26,7 @@ def is_json(value):
 
 
 def rm_attributes_if_null(class_obj):
-    for key, val in class_obj.__dict__.items():
+    for key, val in list(class_obj.__dict__.items()):
         if not val:
             class_obj.__dict__.pop(key)
 
@@ -40,7 +40,7 @@ def rm_key_if_null(obj):
 
 
 def _rm_key(_dict):
-    for key, val in _dict.items():
+    for key, val in list(_dict.items()):
         if not val:
             _dict.pop(key)
     return _dict
